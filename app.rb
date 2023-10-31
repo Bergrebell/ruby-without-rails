@@ -1,11 +1,11 @@
 class App
   def call(env)
-    headers = {
-      'Content-Type' => 'text/html'
-    }
+    headers = { 'Content-Type' => 'text/html' }
 
-    response = ['<h1>Hello Ruby?!!</h1>']
+    response_html = File.read('views/index.html')
 
-    [200, headers, response]
+    # same response, i.e. contents of index.html
+    # is sent no matter the request
+    [200, headers, [response_html]]
   end
 end
