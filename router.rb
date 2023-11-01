@@ -29,7 +29,10 @@ class Router
         @routes['/' + path] = ->(env) {
           controller_name, action_name = path.split('/')
           controller_klass = constantize(controller_name)
-          controller_klass.new(env).send(action_name.to_sym)
+
+          controller = controller_klass.new(env)
+          controller.send(action_name.to_sym)
+          controller.render("views/#{controller_name}/#{action_name}.html.erb")
         }
       end
     end
