@@ -1,10 +1,6 @@
-class ArticlesController
-  attr_reader :env
+require_relative 'application_controller'
 
-  def initialize(env)
-    @env = env
-  end
-
+class ArticlesController < ApplicationController
   def index
     'All articles coming from the controller, baby!'
   end
