@@ -1,6 +1,5 @@
 require 'singleton'
 require 'debug'
-require_relative 'controllers/articles_controller'
 
 class Router
   include Singleton

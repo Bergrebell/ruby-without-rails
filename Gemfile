@@ -9,3 +9,5 @@ gem "puma", "~> 6.4"
 gem "rack", "~> 3.0"
 
 gem "debug"
+
+gem "zeitwerk", "~> 2.6"
